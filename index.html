@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW26</title>
+  </head>
+  <body>
+    <script>
+      // 1. Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).
+
+      for (let i = 20; i <= 30; i = i + 0.5) {
+        console.log(i);
+      }
+
+      // 2.Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів.
+
+      for (let i = 10; i <= 100; i = i + 10) {
+        console.log(i * 27);
+      }
+
+      //чи можна так)
+
+      let costDollar = 27;
+      for (let i = 10; i <= 100; i = i + 10) {
+        console.log(i * costDollar);
+      }
+
+      // 3. Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N.
+
+      let N = 95;
+      for (let i = 1; i <= N; i++) {
+        if (i ** 2 <= N) {
+          console.log(i);
+        }
+      }
+
+      // 4.Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).
+
+      function numberYes(n) {
+        switch (n) {
+          case 1:
+            return false;
+          case 2:
+            return true;
+          default:
+            for (let i = 2; i < n; i++) {
+              if (n % i === 0) {
+                return false;
+              }
+            }
+            return true;
+        }
+      }
+      console.log(numberYes(13));
+
+      // 5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь.
+      //    (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
+
+      const number = 96;
+      let numberCounter = number;
+      counter = 0;
+
+      while (numberCounter % 3 === 0) {
+        numberCounter /= 3;
+        counter++;
+      }
+      switch (numberCounter) {
+        case 1:
+          console.log(
+            `Число ${number} можна отримати шляхом зведення числа 3 у ступінь ${counter}! `
+          );
+          break;
+        default:
+          console.log(
+            `Число ${number} не можна отримати шляхом зведення числа 3 у будь-який ступінь! `
+          );
+      }
+    </script>
+  </body>
+</html>
